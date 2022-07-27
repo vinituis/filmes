@@ -2,12 +2,12 @@
 include 'cabecalho.php';
 ?>
 <body>
-<nav class="nav-extended purple lighten-3">
+<nav class="nav-extended purple lighten-2">
   
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right">
       <li><a href="galeria.php">Galeria</a></li>
-      <li><a href="cadastrar.php">Cadastrar</a></li>
+      <li class="active"><a href="cadastrar.php">Cadastrar</a></li>
     </ul>
   </div>
   

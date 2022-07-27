@@ -1,3 +1,19 @@
 body {
     background-color: #e5e5e5;
 }
+
+.nav-extended {
+    background-image: url("../images/banner.jpg");
+    background-size: cover;
+    background-blend-mode:multiply;
+}
+
+nav ul li.active,
+.tab a.active {
+    border-bottom: solid 2px #fff;
+    background-color: transparent;
+}
+
+.nav-header h1 {
+    text-shadow: 2px 2px 16px #000;
+}

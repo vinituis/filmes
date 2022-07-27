@@ -1,5 +1,29 @@
 <?php
 include 'cabecalho.php';
+
+$filme1 = [
+  "titulo" => "Vingadores 2",
+  "nota" => 6.6,
+  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
+  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
+];
+
+$filme2 = [
+  "titulo" => "Vingadores 3",
+  "nota" => 6.7,
+  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
+  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
+];
+
+$filme3 = [
+  "titulo" => "Vingadores 4",
+  "nota" => 6.8,
+  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
+  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
+];
+
+$filmes = [$filme1, $filme2, $filme3];
+
 ?>
 <body>
 <nav class="nav-extended purple lighten-2">
@@ -26,21 +50,23 @@ include 'cabecalho.php';
 </nav>
 
 <div class="row">
-
-  <div class="col s3">
-    <div class="card hoverable">
-      <div class="card-image">
-        <img src="https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg">
-        <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
-      </div>
-      <div class="card-content">
-        <p class="valign-wrapper"><i class="material-icons amber-text">star</i> 9,7</p>
-        <span class="card-title">Vingadores</span>
-        <p>Após os eventos devastadores de "Vingadores: Guerra Infinita", o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.</p>
+  <?php
+    foreach($filmes as $filme) {
+  ?>
+    <div class="col s3">
+      <div class="card hoverable">
+        <div class="card-image">
+          <img src="<?php echo $filme["poster"] ?>">
+          <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
+        </div>
+        <div class="card-content">
+          <p class="valign-wrapper"><i class="material-icons amber-text">star</i> <?php echo $filme["nota"] ?></p>
+          <span class="card-title"><?php echo $filme["titulo"] ?></span>
+          <p><?php echo $filme["sinopse"] ?></p>
+        </div>
       </div>
     </div>
-  </div>
-
+  <?php } ?>
 
 </div>
 </body>

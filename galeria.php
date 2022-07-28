@@ -1,9 +1,13 @@
 <?php
 include 'cabecalho.php';
 
-$bd = new SQLite3("filmes.db");
-$sql = "SELECT * FROM filmes";
-$filmes = $bd->query($sql);
+session_start();
+
+require "./repository/FilmesRepositoryPDO.php";
+require "./util/Mensagem.php";
+
+$filmesRepository = new FilmesRepositoryPDO();
+$filmes = $filmesRepository->listarTodos();
 
 ?>
 <body>
@@ -31,19 +35,17 @@ $filmes = $bd->query($sql);
 </nav>
 <div class="container">
   <div class="row">
-    <?php
-      
-    while ($filme = $filmes->fetchArray()) { ?>
+    <?php foreach($filmes as $filme) { ?>
       <div class="col s12 m6 l3">
         <div class="card hoverable">
           <div class="card-image">
-            <img src="<?php echo $filme["poster"] ?>">
+            <img src="<?php echo $filme->poster; ?>">
             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">favorite_border</i></a>
           </div>
           <div class="card-content">
-            <p class="valign-wrapper"><i class="material-icons amber-text">star</i> <?php echo $filme["nota"] ?></p>
-            <span class="card-title"><?php echo $filme["titulo"] ?></span>
-            <p><?php echo $filme["sinopse"] ?></p>
+            <p class="valign-wrapper"><i class="material-icons amber-text">star</i> <?php echo $filme->nota; ?></p>
+            <span class="card-title"><?php echo $filme->titulo; ?></span>
+            <p><?php echo $filme->sinopse; ?></p>
           </div>
         </div>
       </div>
@@ -51,13 +53,7 @@ $filmes = $bd->query($sql);
 
   </div>
 </div>
+<?php echo Mensagem::mostrar(); ?>
 </body>
 
-<?php if(isset($_GET["msg"])){ ?>
-<script>
-  M.toast({
-    html: "<?php echo $_GET['msg']; ?>"
-  });
-</script>
-<?php } ?>
 </html>

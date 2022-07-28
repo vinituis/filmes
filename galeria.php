@@ -1,28 +1,9 @@
 <?php
 include 'cabecalho.php';
 
-$filme1 = [
-  "titulo" => "Vingadores 2",
-  "nota" => 6.6,
-  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
-  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
-];
-
-$filme2 = [
-  "titulo" => "Vingadores 3",
-  "nota" => 6.7,
-  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
-  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
-];
-
-$filme3 = [
-  "titulo" => "Vingadores 4",
-  "nota" => 6.8,
-  "sinopse" => "Após os eventos devastadores de Vingadores: Guerra Infinita, o universo está em ruínas devido aos esforços do Titã Louco, Thanos. Com a ajuda de aliados remanescentes, os Vingadores devem se reunir mais uma vez a fim de desfazer as ações de Thanos e restaurar a ordem no universo de uma vez por todas, não importando as consequências.",
-  "poster" => "https://www.themoviedb.org/t/p/w300/q6725aR8Zs4IwGMXzZT8aC8lh41.jpg"
-];
-
-$filmes = [$filme1, $filme2, $filme3];
+$bd = new SQLite3("filmes.db");
+$sql = "SELECT * FROM filmes";
+$filmes = $bd->query($sql);
 
 ?>
 <body>
@@ -51,7 +32,8 @@ $filmes = [$filme1, $filme2, $filme3];
 
 <div class="row">
   <?php
-    foreach($filmes as $filme) {
+    
+while ($filme = $filmes->fetchArray()) {
   ?>
     <div class="col s3">
       <div class="card hoverable">

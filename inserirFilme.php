@@ -18,6 +18,6 @@ if($filmesRepository->salvar($filme))
 else
     $_SESSION["msg"] = "Erro ao cadastrar o filme";
 
-header("Location: galeria.php");
+header("Location: /");
 
 ?>

@@ -15,8 +15,8 @@ $filmes = $filmesRepository->listarTodos();
   
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right">
-      <li class="active"><a href="galeria.php">Galeria</a></li>
-      <li><a href="cadastrar.php">Cadastrar</a></li>
+      <li class="active"><a href="/">Galeria</a></li>
+      <li><a href="/novo">Cadastrar</a></li>
     </ul>
   </div>
   

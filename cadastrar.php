@@ -6,8 +6,8 @@ include 'cabecalho.php';
   
   <div class="nav-wrapper">
     <ul id="nav-mobile" class="right">
-      <li><a href="galeria.php">Galeria</a></li>
-      <li class="active"><a href="cadastrar.php">Cadastrar</a></li>
+      <li><a href="/">Galeria</a></li>
+      <li class="active"><a href="/npvo">Cadastrar</a></li>
     </ul>
   </div>
   
@@ -18,7 +18,7 @@ include 'cabecalho.php';
 </nav>
     
 <div class="row">
-  <form action="inserirFilme.php" method="POST">
+  <form method="POST">
     <div class="col s6 offset-s3">
       <div class="card">
         <div class="card-content">
@@ -61,7 +61,7 @@ include 'cabecalho.php';
 
           </div>
         <div class="card-action">
-          <a href="galeria.php" class="waves-effect waves-light btn grey">Cancelar</a>
+          <a href="/" class="waves-effect waves-light btn grey">Voltar</a>
           <button type="submit" class="waves-effect waves-light btn purple">Cadastrar</button>
         </div>
       </div>

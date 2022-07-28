@@ -52,4 +52,12 @@ $filmes = $bd->query($sql);
   </div>
 </div>
 </body>
+
+<?php if(isset($_GET["msg"])){ ?>
+<script>
+  M.toast({
+    html: "<?php echo $_GET['msg']; ?>"
+  });
+</script>
+<?php } ?>
 </html>
